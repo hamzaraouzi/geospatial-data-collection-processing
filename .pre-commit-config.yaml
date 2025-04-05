@@ -1,0 +1,26 @@
+fail_fast: true
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: docstringcheck
+        name: docstringcheck
+        entry: poetry run bash scripts/docstring.sh
+        language: system
+        files: ^src/
+        types: [file, python]
+        pass_filenames: false
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+  - repo: https://github.com/python-poetry/poetry
+    rev: 1.6.0
+    hooks:
+      - id: poetry-check
+      - id: poetry-lock

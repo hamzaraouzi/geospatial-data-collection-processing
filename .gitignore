@@ -1,0 +1,7 @@
+terraform/.terraform
+terraform/.terraform.lock.hcl
+terraform/.terraform.tfstate.lock.info
+terraform/terraform.tfstate
+terraform/auth/service-account.json
+terraform/terraform.tfstate.backup
+airflow_venv
